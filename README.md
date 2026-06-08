@@ -22,10 +22,3 @@ Git and GitHub
 
 ```bash
 python expenses.py
-
-What I am learning:
-Python basics
-Lists and dictionaries
-Loops
-Conditions
-Git and GitHub
