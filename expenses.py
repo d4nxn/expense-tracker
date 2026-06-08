@@ -22,11 +22,23 @@ while True:
 
     choice = input("Choose an option: ")
     if choice == "1":
+        print("\nChoose type of income: ")
+        print("1. Salary")
+        print("2. Side Hustle")
+        print("3. Other")
+        income_type = input("Type: ")
+        if income_type == "1":
+            income_category = "Salary"
+        elif income_type =="2":
+            income_category = "Side Hustle"
+        else:
+            income_category = "Other"
         amount = float(input("Amount: "))
         description = input("Description: ")
 
         transaction = {
             "type": "Income",
+            "category" : income_category,
             "amount": amount,
             "description": description
         }
