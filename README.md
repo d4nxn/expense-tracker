@@ -11,6 +11,13 @@ A simple console expense tracker written in Python.
 - Show all transactions
 - Show balance
 
+What I am learning:
+Python basics
+Lists and dictionaries
+Loops
+Conditions
+Git and GitHub
+
 ## How to run
 
 ```bash
