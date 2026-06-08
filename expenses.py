@@ -41,14 +41,14 @@ while True:
         print("2. Transport")
         print("3. Entertainment")
         print("4. Other")
-        choice = input("Category: ")
-        if choice == "1":
+        category_choice = input("Category: ")
+        if category_choice == "1":
             category = "Food"
-        elif choice == "2":
+        elif category_choice == "2":
             category = "Transport"
-        elif choice == "3":
+        elif category_choice == "3":
             category = "Entertainment"
-        elif choice == "4":
+        else:
             category = "Other"
         
         amount = float(input("Amount: "))
