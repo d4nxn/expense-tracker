@@ -22,6 +22,7 @@ while True:
 
     choice = input("Choose an option: ")
     if choice == "1":
+        #Add type of income
         print("\nChoose type of income: ")
         print("1. Salary")
         print("2. Side Hustle")
