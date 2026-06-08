@@ -1,0 +1,85 @@
+transactions = [
+    {
+        "type" : "Income",
+        "amount" : 3600,
+        "description" : "Salary",
+        "category" : "Work" 
+    },
+    {
+        "type" : "Expense",
+        "amount" : 250,
+        "description" : "Groceries",
+        "category" : "Food"
+    }
+]
+
+while True:
+    print("\n1. Add income")
+    print("2. Add expense")
+    print("3. Show transactions")
+    print("4. Show balance")
+    print("5. Exit")
+
+    choice = input("Choose an option: ")
+    if choice == "1":
+        amount = float(input("Amount: "))
+        description = input("Description: ")
+
+        transaction = {
+            "type": "Income",
+            "amount": amount,
+            "description": description
+        }
+
+        transactions.append(transaction)
+        print("Income added!")
+
+    #Add categories for expenses
+    elif choice == "2":
+        print("\nChoose a category: ")
+        print("1. Food")
+        print("2. Transport")
+        print("3. Entertainment")
+        print("4. Other")
+        choice = input("Category: ")
+        if choice == "1":
+            category = "Food"
+        elif choice == "2":
+            category = "Transport"
+        elif choice == "3":
+            category = "Entertainment"
+        elif choice == "4":
+            category = "Other"
+        
+        amount = float(input("Amount: "))
+        description = input("Description: ")
+
+        transaction = {
+            "type": "Expense",
+            "category": category,
+            "amount": amount,
+            "description": description
+        }
+
+        transactions.append(transaction)
+        print("Expense added!")
+
+    elif choice == "3":
+        for transaction in transactions:
+            print(f"{transaction['type']}: {transaction['amount']} zl - {transaction['description']} ({transaction['category']})")
+
+    elif choice == "4":
+        balance = 0
+        for transaction in transactions:
+            if transaction["type"] == "Income":
+                balance += transaction ["amount"]
+            elif transaction["type"] == "Expense":
+                balance -= transaction ["amount"]
+        print("Balance: ", balance)
+
+    elif choice == "5":
+        print("Have a nice day!")
+        break
+
+    else:
+        print("Invalid option, please try again.")
