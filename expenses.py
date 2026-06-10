@@ -24,6 +24,17 @@ def show_transactions(transactions):
     for transaction in transactions:
         print(f"{transaction['type']}: {transaction['amount']} zl - {transaction['description']} ({transaction['category']})")
 
+def show_balance(transactions):
+    balance = 0
+
+    for transaction in transactions:
+        if transaction["type"] == "Income":
+            balance += transaction["amount"]
+        elif transaction["type"] == "Expense":
+            balance -= transaction["amount"]
+
+    print("Balance:", balance)
+
 while True:
     show_menu()
     choice = input("Choose an option: ")
@@ -86,13 +97,7 @@ while True:
         show_transactions(transactions)
 
     elif choice == "4":
-        balance = 0
-        for transaction in transactions:
-            if transaction["type"] == "Income":
-                balance += transaction ["amount"]
-            elif transaction["type"] == "Expense":
-                balance -= transaction ["amount"]
-        print("Balance: ", balance)
+        show_balance(transactions)
 
     elif choice == "5":
         print("Have a nice day!")
