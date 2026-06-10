@@ -13,13 +13,15 @@ transactions = [
     }
 ]
 
-while True:
+def show_menu():
     print("\n1. Add income")
     print("2. Add expense")
     print("3. Show transactions")
     print("4. Show balance")
     print("5. Exit")
 
+while True:
+    show_menu()
     choice = input("Choose an option: ")
     if choice == "1":
         #Add type of income
