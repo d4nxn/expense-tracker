@@ -20,6 +20,10 @@ def show_menu():
     print("4. Show balance")
     print("5. Exit")
 
+def show_transactions(transactions):
+    for transaction in transactions:
+        print(f"{transaction['type']}: {transaction['amount']} zl - {transaction['description']} ({transaction['category']})")
+
 while True:
     show_menu()
     choice = input("Choose an option: ")
@@ -49,7 +53,6 @@ while True:
         transactions.append(transaction)
         print("Income added!")
 
-    #Add categories for expenses
     elif choice == "2":
         print("\nChoose a category: ")
         print("1. Food")
@@ -80,8 +83,7 @@ while True:
         print("Expense added!")
 
     elif choice == "3":
-        for transaction in transactions:
-            print(f"{transaction['type']}: {transaction['amount']} zl - {transaction['description']} ({transaction['category']})")
+        show_transactions(transactions)
 
     elif choice == "4":
         balance = 0
