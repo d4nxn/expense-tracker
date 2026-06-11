@@ -1,3 +1,6 @@
+from unicodedata import category
+
+
 transactions = [
     {
         "type" : "Income",
@@ -35,6 +38,37 @@ def show_balance(transactions):
 
     print("Balance:", balance)
 
+def add_expense(transactions):
+    print("\nChoose a category: ")
+    print("1. Food")
+    print("2. Transport")
+    print("3. Entertainment")
+    print("4. Other")
+
+    category_choice = input("Category: ")
+    if category_choice == "1":
+        category = "Food"
+    elif category_choice == "2":
+        category = "Transport"
+    elif category_choice == "3":
+        category = "Entertainment"
+    else:
+        category = "Other"
+        
+    amount = float(input("Amount: "))
+    description = input("Description: ")
+
+    transaction = {
+        "type": "Expense",
+        "category": category,
+        "amount": amount,
+        "description": description
+    }
+
+    transactions.append(transaction)
+    print("Expense added!")
+
+
 while True:
     show_menu()
     choice = input("Choose an option: ")
@@ -65,33 +99,7 @@ while True:
         print("Income added!")
 
     elif choice == "2":
-        print("\nChoose a category: ")
-        print("1. Food")
-        print("2. Transport")
-        print("3. Entertainment")
-        print("4. Other")
-        category_choice = input("Category: ")
-        if category_choice == "1":
-            category = "Food"
-        elif category_choice == "2":
-            category = "Transport"
-        elif category_choice == "3":
-            category = "Entertainment"
-        else:
-            category = "Other"
-        
-        amount = float(input("Amount: "))
-        description = input("Description: ")
-
-        transaction = {
-            "type": "Expense",
-            "category": category,
-            "amount": amount,
-            "description": description
-        }
-
-        transactions.append(transaction)
-        print("Expense added!")
+       add_expense(transactions)
 
     elif choice == "3":
         show_transactions(transactions)
