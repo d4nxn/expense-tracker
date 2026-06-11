@@ -99,7 +99,7 @@ while True:
         add_income(transactions)
 
     elif choice == "2":
-       add_expense(transactions)
+        add_expense(transactions)
 
     elif choice == "3":
         show_transactions(transactions)
