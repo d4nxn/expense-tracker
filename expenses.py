@@ -68,6 +68,31 @@ def add_expense(transactions):
     transactions.append(transaction)
     print("Expense added!")
 
+def add_income(transactions):
+    print("\nChoose type of income: ")
+    print("1. Salary")
+    print("2. Side Hustle")
+    print("3. Other")
+    income_type = input("Type: ")
+    if income_type == "1":
+        income_category = "Salary"
+    elif income_type =="2":
+        income_category = "Side Hustle"
+    else:
+        income_category = "Other"
+    amount = float(input("Amount: "))
+    description = input("Description: ")
+
+    transaction = {
+        "type": "Income",
+        "category" : income_category,
+        "amount": amount,
+        "description": description
+    }
+
+    transactions.append(transaction)
+    print("Income added!")
+
 
 while True:
     show_menu()
