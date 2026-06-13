@@ -65,6 +65,7 @@ def add_expense(transactions):
     }
 
     transactions.append(transaction)
+    save_transactions(transactions)
     print("Expense added!")
 
 def add_income(transactions):
@@ -90,7 +91,12 @@ def add_income(transactions):
     }
 
     transactions.append(transaction)
+    save_transactions(transactions)
     print("Income added!")
+
+def save_transactions(transactions):
+    with open("transactions.json", "w") as file:
+        json.dump(transactions, file, indent=4)
 
 
 while True:

@@ -1,0 +1,26 @@
+[
+    {
+        "type": "Income",
+        "amount": 3600,
+        "description": "Salary",
+        "category": "Work"
+    },
+    {
+        "type": "Expense",
+        "amount": 250,
+        "description": "Groceries",
+        "category": "Food"
+    },
+    {
+        "type": "Income",
+        "category": "Side Hustle",
+        "amount": 500.0,
+        "description": "ae"
+    },
+    {
+        "type": "Expense",
+        "category": "Entertainment",
+        "amount": 100.0,
+        "description": "films"
+    }
+]
